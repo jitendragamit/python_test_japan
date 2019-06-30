@@ -1,33 +1,29 @@
-#!C:/Users/jgamit/AppData/Local/Programs/Python/Python36/python.exe
-#print('Content-Type: text/html')
-print('\r') 
-import request
-import mysql.connector
+import sys
+import requests
 import json
 
-data = request.POST
+mac_address = input("Please enter mac address:")
+max_len = len(mac_address)
 
-python_obj = json.dumps(data)
+if (max_len < 8): 
+	print ('Please enter atleast 8 characters with xx-xx-xx format')
+	sys.exit(0)
 
-python_obj = json.loads(python_obj)
+mac_address = mac_address[0:8]
+url = 'http://localhost:81/test/mac_address_lookup_api.py'
 
-max_address = python_obj['max_address']
+payload = {
+    'mac_address': mac_address,
+	'token': '123456'
+}
 
-conn = mysql.connector.connect(host='localhost',
-                             database='db_python_test',
-                             user='root',
-                             password='')
-							 
-cursor = conn.cursor()
-query = "SELECT vendor_name FROM tbl_mac_address_vendor where address_prefix like '" + max_address + "%'"
+#response = requests.post(url, data=payload,headers={"Content-Type": "application/json"})
+response = requests.post(url, data=payload)
 
-cursor.execute(query)
-rows = cursor.fetchone()
-print(rows[0])
-cursor.close()
+if response.status_code == 200:
+	print(response.text)
+else:
+	print('Invalid response..')
 
-
-
-
-
-
+#print(response.json())
+#print(json.loads(response.text)['session'])
