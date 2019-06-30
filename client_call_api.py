@@ -23,7 +23,7 @@ response = requests.post(url, data=payload)
 if response.status_code == 200:
 	print(response.text)
 else:
-	print('Invalid response..')
+	print('Invalid response...')
 
 #print(response.json())
 #print(json.loads(response.text)['session'])
