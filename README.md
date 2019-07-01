@@ -3,12 +3,14 @@
 Please find below instruction to run the application :
 
 Prerequisites :
- 1) Python version 3.0 or above (python should be install with package "requests")
+ 1) Python version 3.0 or above (python should be installed with package "requests")
  2) Mysql 5.0 or above  
  3) Application setup method 
     
-	i) Download the folder (python_test_japan) and copy to /var/www/html folder in your linux server.
+	i) Download the folder (python_test_japan) from url and copy to /var/www/html folder in your linux server.
         
+		https://github.com/jitendragamit/python_test_japan
+		
 		OR 
 	
 	ii) use git clone command to donwload files
