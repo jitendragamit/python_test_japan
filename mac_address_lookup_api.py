@@ -1,4 +1,4 @@
-#!C:/Users/jgamit/AppData/Local/Programs/Python/Python36/python.exe
+#!/usr/bin/env python
 #print('Content-Type: text/html')
 print('\r') 
 #print('Hello, world!')
