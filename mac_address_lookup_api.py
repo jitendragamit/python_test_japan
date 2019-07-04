@@ -6,11 +6,22 @@ import request
 import mysql.connector
 import json
 
+
+import sys, os
+import cgitb
+cgitb.enable()
+import cgi
+form = cgi.FieldStorage()
+mac_address = form.getvalue('mac_address')
+token = form.getvalue('token')
+
+"""
 data = request.POST
 python_obj = json.dumps(data)
 python_obj = json.loads(python_obj)
 mac_address = python_obj['mac_address']
 token = python_obj['token']
+"""
 
 if token != '123456':
 	print('Invalid token value')
