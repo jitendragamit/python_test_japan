@@ -23,8 +23,8 @@ Prerequisites :
     i) Go into /var/www/html/your_folder_name then 
 	   # python client_call_api.py 
 
-       then it will be prompt to type mac address name 
-	   then press enter it will be output of Company name 	
+      then it will be prompt to ask the Mac address, please type Mac address name 
+	  and then press enter, It will be returned the Company name.
 	
 	 
  
